@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EasyBuy Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h2>🛒 EasyBuyStore</h2>
+</header>
+
+<div class="main">
+
+    <!-- 🔥 SIDEBAR -->
+    <div class="sidebar">
+
+        <h3>Filters</h3>
+
+        <input type="text" id="category" placeholder="Category">
+
+        <input type="number" id="minPrice" placeholder="Min Price">
+        <input type="number" id="maxPrice" placeholder="Max Price">
+
+        <input type="text" id="keyword" placeholder="Search keyword">
+
+        <select id="rating">
+            <option value="">All Ratings</option>
+            <option value="4.5">4.5 ⭐ & above</option>
+            <option value="4">4 ⭐ & above</option>
+            <option value="3">3 ⭐ & above</option>
+        </select>
+
+        <h4>Sort</h4>
+        <select id="sortBy">
+            <option value="price">Price</option>
+            <option value="ratings">Ratings</option>
+            <option value="name">Name</option>
+        </select>
+
+        <select id="direction">
+            <option value="asc">Low → High</option>
+            <option value="desc">High → Low</option>
+        </select>
+
+        <button onclick="searchProducts()">Apply Filters</button>
+
+    </div>
+
+    <!-- 🔥 CONTENT -->
+    <div class="content">
+
+        <!-- 🔥 ADD PRODUCT -->
+        <div class="add-product">
+            <h3>Add Product</h3>
+
+            <input id="name" placeholder="Name">
+            <input id="description" placeholder="Description">
+            <input id="price" type="number" placeholder="Price">
+            <input id="seller" placeholder="Seller">
+            <input id="stock" type="number" placeholder="Stock">
+            <input id="categoryInput" placeholder="Category">
+
+            <button onclick="addProduct()">Add Product</button>
+        </div>
+
+        <!-- 🔥 PRODUCTS -->
+        <div id="products-container" class="products-grid"></div>
+
+        <!-- 🔥 PAGINATION -->
+        <div class="pagination">
+            <button onclick="prevPage()">Prev</button>
+            <span id="page-info"></span>
+            <button onclick="nextPage()">Next</button>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <h3>Update Product</h3>
+
+        <input id="updateName" placeholder="Name">
+        <input id="updatePrice" type="number" placeholder="Price">
+
+        <button onclick="submitUpdate()">Save</button>
+        <button onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+
+<div id="toast"></div>
+
+<div id="loader" class="loader hidden"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
